@@ -7,7 +7,7 @@ CI / CD 工具 Jenkins 和 Travis ；
 
 以及流程管理/协作工具 Jira 和 Confluence;
 
-数据合并清洗
+数据合并清洗  kettle http://kettle.pentaho.org/
 
 Sikuli 自动化测试 图片识别 http://www.sikuli.org/download.html
 
