@@ -26,19 +26,19 @@ make && make install
 export LUAJIT_LIB=/usr/local/lib
 export LUAJIT_INC=/usr/local/include/luajit-2.0/
 2.下载最新版tengine,官网 http://tengine.taobao.org/   
-       wget http://tengine.taobao.org/download/tengine-1.5.2.tar.gz   
-       tar xzvf tengine-1.5.2.tar.gz   
-    cd tengine-1.5.2   
-    ./configure --with-ld-opt="-Wl,-rpath,/usr/local/web/LuaJIT-2.0.1/lib" --prefix=/usr/local/web/tengine-1.5.2 --with-http_lua_module --with-luajit-inc=/usr/local/web/LuaJIT-2.0.1/include/luajit-2.0 --with-luajit-lib=/usr/local/web/LuaJIT-2.0.1/lib   
+```sh
+wget http://tengine.taobao.org/download/tengine-1.5.2.tar.gz   
+tar xzvf tengine-1.5.2.tar.gz   
+cd tengine-1.5.2   
+./configure --with-ld-opt="-Wl,-rpath,/usr/local/web/LuaJIT-2.0.1/lib" --prefix=/usr/local/web/tengine-1.5.2 --with-http_lua_module --with-luajit-inc=/usr/local/web/LuaJIT-2.0.1/include/luajit-2.0 --with-luajit-lib=/usr/local/web/LuaJIT-2.0.1/lib   
+```
 
-
-
+```lua
 location /lua_content {
             # MIME type determined by default_type:
             default_type 'text/plain';
-
             content_by_lua "ngx.say('Hello,world!')";
-        }    
+        }
 
 local redis = require "resty.redis"
 local redis_obj = redis.new()
@@ -52,7 +52,7 @@ end
 ngx.say(res)        
 
 openresty/lua-resty-redis
-
+```
 源文档 <https://github.com/openresty/lua-resty-redis#set_timeout> 
 
 
