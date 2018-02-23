@@ -16,3 +16,7 @@ By Liferay http://alloyeditor.com/demo/
 
 IntelliJ IDEA
 来自 <http://baike.baidu.com/view/2735945.htm> 
+
+CQRS 架构
+
+OceanBase “基线数据（硬盘）”+“修改增量（内存）”的架构
