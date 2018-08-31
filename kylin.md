@@ -8,3 +8,8 @@ $KYLIN_HOME/bin/metastore.sh backup
 $KYLIN_HOME/bin/metastore.sh reset
 $KYLIN_HOME/bin/metastore.sh restore $KYLIN_HOME/meta_backups/meta_xxxx_xx_xx_xx_xx_xx
 http://blog.csdn.net/zhangzhaokun/article/details/78419846
+二.JVM的几个参数：
+-Xms2058mJVM初始分配的堆内存
+-Xmx1024mJVM最大允许分配的堆内存，按需分配
+-XX:PermSize=128MJVM初始分配的非堆内存
+-XX:MaxPermSize=256MJVM最大允许分配的非堆内存，按需分配

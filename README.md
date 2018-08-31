@@ -22,3 +22,5 @@ CQRS 架构
 OceanBase “基线数据（硬盘）”+“修改增量（内存）”的架构
 
 Mysql Infobright 数仓，社区版不支持 insert,update,delete 只支持load方式写入 http://blog.zyan.cc/infobright/
+
+Elasticsearch 全文搜索引擎

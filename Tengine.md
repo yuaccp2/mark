@@ -70,3 +70,14 @@ HttpLuaModule
 源文档 <http://wiki.nginx.org/HttpLuaModule> 
 
 Lua脚本语法说明（入门）http://www.360doc.com/content/11/0121/16/61151_88118887.shtml                                   
+
+
+#配置
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-NginX-Proxy true;
+
+proxy_set_header X-Real-IP $remote_addr;     	# 针对首层代理，拿到真实IP
+proxy_set_header X-Real-IP $http_x_real_ip;  	# 针对非首层代理，一直传下去
+proxy_set_header X-Forwarded-For  $remote_addr; # 针对非首层代理，一直传下去
+real_ip_header X-Forwarded-For;

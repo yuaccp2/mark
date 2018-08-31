@@ -1,0 +1,1 @@
+http://blog.51cto.com/msgll/1963066 Supervisor安装及进程监控配置介绍
