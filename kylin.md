@@ -8,6 +8,8 @@ $KYLIN_HOME/bin/metastore.sh backup
 $KYLIN_HOME/bin/metastore.sh reset
 $KYLIN_HOME/bin/metastore.sh restore $KYLIN_HOME/meta_backups/meta_xxxx_xx_xx_xx_xx_xx
 http://blog.csdn.net/zhangzhaokun/article/details/78419846
+
+curl -X DELETE --user ADMIN:KYLIN -H "Content-Type: application/json;charset=utf-8" http://10.10.19.61:7070/kylin/api/cubes/dm_time_division_h/segs/20180920040000_20180921050000
 二.JVM的几个参数：
 -Xms2058mJVM初始分配的堆内存
 -Xmx1024mJVM最大允许分配的堆内存，按需分配

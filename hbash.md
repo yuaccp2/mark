@@ -1,0 +1,1 @@
+scan 'sparrow_t_event_result', {FILTER => RowFilter.new(CompareFilter::CompareOp.valueOf('EQUAL'), SubstringComparator.new('Do_iOSRepair#RepairiOS_Process#DeviceInfoPage#7')) AND RowFilter.new(CompareFilter::CompareOp.valueOf('EQUAL'), SubstringComparator.new('#01#'))}

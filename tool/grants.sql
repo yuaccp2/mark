@@ -1,0 +1,278 @@
+
+-- Grants for dba@ 
+GRANT ALL PRIVILEGES ON *.* TO 'dba'@'' IDENTIFIED BY PASSWORD '*E7FCE54F270CA0B8D8326F14436BCC0943B2313B' WITH GRANT OPTION;
+
+-- Grants for CWB@% 
+GRANT USAGE ON *.* TO 'CWB'@'%' IDENTIFIED BY PASSWORD '*0A91AA7768C79B7F774320BCF9A4DECF216B2D0E';
+GRANT SELECT ON `report_ls`.`ls_ads_origin_cn` TO 'CWB'@'%';
+GRANT SELECT ON `report_ls`.`ls_ads_revised` TO 'CWB'@'%';
+GRANT SELECT ON `report_ls`.`ls_ads_origin_overseas` TO 'CWB'@'%';
+
+-- Grants for caiwj@% 
+GRANT USAGE ON *.* TO 'caiwj'@'%' IDENTIFIED BY PASSWORD '*FABC55D202FD8856EB4876799D2103535AD92A57';
+GRANT SELECT ON `data_base_import`.* TO 'caiwj'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, INDEX, ALTER ON `data_base_import`.`google_sheets_info` TO 'caiwj'@'%';
+
+-- Grants for cdh_import@% 
+GRANT FILE ON *.* TO 'cdh_import'@'%' IDENTIFIED BY PASSWORD '*BA3A08F633449A2B7C0D17F245AF3BD71215A68E';
+GRANT ALL PRIVILEGES ON `data_base_cdn`.* TO 'cdh_import'@'%';
+
+-- Grants for cdn_dw_write@% 
+GRANT USAGE ON *.* TO 'cdn_dw_write'@'%' IDENTIFIED BY PASSWORD '*38FF5962E94851A830F38D0997A409141E6FCEF0';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `cdn_dwh_tmp`.* TO 'cdn_dw_write'@'%';
+
+-- Grants for chenzx@% 
+GRANT USAGE ON *.* TO 'chenzx'@'%' IDENTIFIED BY PASSWORD '*B17B61D9F55F3380200C44C8E4D91444297B59CE';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `data_base_cdn`.* TO 'chenzx'@'%';
+
+-- Grants for ga_loader@% 
+GRANT USAGE ON *.* TO 'ga_loader'@'%' IDENTIFIED BY PASSWORD '*A6E9F819AC5DF92D3B69FFFA1EB2F7F38830BD71';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `report_app_ga`.* TO 'ga_loader'@'%';
+
+-- Grants for guodw@% 
+GRANT USAGE ON *.* TO 'guodw'@'%' IDENTIFIED BY PASSWORD '*BB3DD49DD3DCB7300235E4EFB73DD88A3DE17DA7';
+GRANT SELECT ON `report_ls`.* TO 'guodw'@'%';
+GRANT SELECT ON `report_dm`.* TO 'guodw'@'%';
+
+-- Grants for lepus_monitor@% 
+GRANT PROCESS, REPLICATION CLIENT ON *.* TO 'lepus_monitor'@'%' IDENTIFIED BY PASSWORD '*D737F1D3A6E993828DD71EF3609C29501D3E6FEE' WITH MAX_USER_CONNECTIONS 20;
+
+-- Grants for linlm@% 
+GRANT SELECT ON *.* TO 'linlm'@'%' IDENTIFIED BY PASSWORD '*1C60474EECE7B810315D60A137D62DF14EEDCEC4';
+GRANT ALL PRIVILEGES ON `data_analysis`.* TO 'linlm'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `ods_admin`.`ods_norm` TO 'linlm'@'%';
+
+-- Grants for linsxf@% 
+GRANT SELECT ON *.* TO 'linsxf'@'%' IDENTIFIED BY PASSWORD '*A98E35A04160FF803BC71D98DA0CA6AF95549621';
+GRANT ALL PRIVILEGES ON `report_ga`.* TO 'linsxf'@'%';
+GRANT ALL PRIVILEGES ON `data_analysis`.* TO 'linsxf'@'%';
+GRANT ALL PRIVILEGES ON `ods_web_ga`.* TO 'linsxf'@'%';
+
+-- Grants for linxf@% 
+GRANT SELECT ON *.* TO 'linxf'@'%' IDENTIFIED BY PASSWORD '*A98E35A04160FF803BC71D98DA0CA6AF95549621';
+
+-- Grants for lisj@% 
+GRANT SELECT ON *.* TO 'lisj'@'%' IDENTIFIED BY PASSWORD '*ACE92E95CED46C7AE18624D23FD3F7767B7E410E';
+GRANT ALL PRIVILEGES ON `report_ga`.* TO 'lisj'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `report_ls`.* TO 'lisj'@'%';
+GRANT ALL PRIVILEGES ON `data_analysis`.* TO 'lisj'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES ON `data_base_import`.* TO 'lisj'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `data_base_cdn`.* TO 'lisj'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `ods_web_ga`.* TO 'lisj'@'%';
+
+-- Grants for lixs@% 
+GRANT SELECT ON *.* TO 'lixs'@'%' IDENTIFIED BY PASSWORD '*F9533100AD94FAA8F9238B05E2FF6DD8ACA8A49C';
+GRANT ALL PRIVILEGES ON `data_base_import`.* TO 'lixs'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_base_wsid`.* TO 'lixs'@'%';
+
+-- Grants for mayx@% 
+GRANT SELECT ON *.* TO 'mayx'@'%' IDENTIFIED BY PASSWORD '*074E3EAF97416A99660891C2F1471CB2087C6C6B';
+GRANT SELECT ON `ods_product`.* TO 'mayx'@'%';
+
+-- Grants for ods_admin_read@% 
+GRANT USAGE ON *.* TO 'ods_admin_read'@'%' IDENTIFIED BY PASSWORD '*9B537D691570800174A71770993D6C3D9B3107F8';
+GRANT SELECT ON `ods_admin`.* TO 'ods_admin_read'@'%';
+
+-- Grants for ods_dev@% 
+GRANT FILE ON *.* TO 'ods_dev'@'%' IDENTIFIED BY PASSWORD '*5DD9DDE7DE635C7777E29B1F665173FEAFEF2B3E';
+GRANT SELECT ON `sparrow_report_dim`.* TO 'ods_dev'@'%';
+GRANT SELECT ON `sparrow_init_config`.* TO 'ods_dev'@'%';
+GRANT SELECT ON `report_edm`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER, CREATE TEMPORARY TABLES, EXECUTE ON `report_ods_finance`.* TO 'ods_dev'@'%';
+GRANT SELECT ON `report_tab_wq`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_dashboard_dm`.* TO 'ods_dev'@'%';
+GRANT SELECT ON `report_dm`.* TO 'ods_dev'@'%';
+GRANT SELECT ON `report_tmp`.* TO 'ods_dev'@'%';
+GRANT SELECT ON `report_ls`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, DROP, ALTER ON `report_ods`.* TO 'ods_dev'@'%';
+GRANT ALL PRIVILEGES ON `data_base_dl`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_tab_wq`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `user_info`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_base_cart`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_cbs_cart`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `ods_web_ga`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER, CREATE TEMPORARY TABLES, EXECUTE ON `ods_admin`.* TO 'ods_dev'@'%';
+GRANT ALL PRIVILEGES ON `ods_analysis`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES ON `ods_norm_dm`.* TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `report_dm`.`sys_operate_log` TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `report_dm`.`dim_sales_goal_input` TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `report_dm`.`sys_remark` TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `report_dm`.`dim_dept_input` TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_dm`.`dm_cart_platform_pid_ip_d` TO 'ods_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `report_dm`.`dim_sales_goal_type_input` TO 'ods_dev'@'%';
+
+-- Grants for ods_dev_f@% 
+GRANT FILE ON *.* TO 'ods_dev_f'@'%' IDENTIFIED BY PASSWORD '*5D96E50D4E4B0CD368C42F0980D7CFA73499895E';
+GRANT INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER ON `report_ods_finance`.* TO 'ods_dev_f'@'%';
+GRANT SELECT ON `report_edm`.* TO 'ods_dev_f'@'%';
+GRANT SELECT ON `report_ls`.* TO 'ods_dev_f'@'%';
+GRANT SELECT ON `report_ods`.* TO 'ods_dev_f'@'%';
+GRANT SELECT ON `report_dm`.* TO 'ods_dev_f'@'%';
+
+-- Grants for ods_rp_dev@% 
+GRANT ALL PRIVILEGES ON *.* TO 'ods_rp_dev'@'%' IDENTIFIED BY PASSWORD '*B1CB1B7D449847C49DA7AF8CDC1B3876910CB14F';
+GRANT ALL PRIVILEGES ON `sparrow_report_dim`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `report_ods_finance`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `report_tmp`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `report_ods`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `report_dm`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `report_ls`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_app_ads`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_app_ga`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `report_edm`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_wq`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `data_base_dl`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_tab_wq`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_cart`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_ga`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_user`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_cdn`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_ipo`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_cbs_view`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_saleforce`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_tmp_tc`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_ads`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT ON `data_base_import`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT ON `ods_admin`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `ods_web_ga`.* TO 'ods_rp_dev'@'%';
+GRANT ALL PRIVILEGES ON `ods_norm_dm`.* TO 'ods_rp_dev'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON `data_base_import`.`dim_cbs_product` TO 'ods_rp_dev'@'%';
+
+-- Grants for ods_rp_read@% 
+GRANT USAGE ON *.* TO 'ods_rp_read'@'%' IDENTIFIED BY PASSWORD '*3E41D1430401181442F719029A3BC3A10245F4C3';
+GRANT SELECT ON `report_ods`.* TO 'ods_rp_read'@'%';
+GRANT SELECT ON `report_ls`.* TO 'ods_rp_read'@'%';
+GRANT SELECT ON `report_tmp`.* TO 'ods_rp_read'@'%';
+GRANT SELECT ON `report_dm`.* TO 'ods_rp_read'@'%';
+GRANT SELECT ON `report_edm`.* TO 'ods_rp_read'@'%';
+GRANT SELECT ON `data_base_cdn`.* TO 'ods_rp_read'@'%';
+
+-- Grants for ods_test@% 
+GRANT SELECT ON *.* TO 'ods_test'@'%' IDENTIFIED BY PASSWORD '*C1B4B0076A59EEEF1A0F7A91EAFA857C635743D1';
+GRANT SELECT ON `sparrow_report_dim`.* TO 'ods_test'@'%';
+GRANT SELECT ON `sparrow_init_config`.* TO 'ods_test'@'%';
+GRANT SELECT ON `report_dm`.* TO 'ods_test'@'%';
+GRANT SELECT ON `report_edm`.* TO 'ods_test'@'%';
+GRANT SELECT ON `report_ls`.* TO 'ods_test'@'%';
+GRANT SELECT ON `report_ods_finance`.* TO 'ods_test'@'%';
+GRANT SELECT ON `report_ods`.* TO 'ods_test'@'%';
+GRANT SELECT ON `ods_norm_dm`.* TO 'ods_test'@'%';
+GRANT SELECT ON `ods_admin`.* TO 'ods_test'@'%';
+
+-- Grants for pangx@% 
+GRANT SELECT ON *.* TO 'pangx'@'%' IDENTIFIED BY PASSWORD '*DA86F1D047055A5730A2A85F4C6320534406A1E4';
+
+-- Grants for public_write@% 
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'public_write'@'%' IDENTIFIED BY PASSWORD '*51E4B9B5C9F15076B7ED60A98129AE585791A4FA';
+
+-- Grants for pyread@% 
+GRANT SELECT ON *.* TO 'pyread'@'%' IDENTIFIED BY PASSWORD '*ED01147CA022683F60A05CE2BE21A51B7C75D398';
+
+-- Grants for read_only@% 
+GRANT SELECT ON *.* TO 'read_only'@'%' IDENTIFIED BY PASSWORD '*47646ED664BFD993442F175266B6F4367E8CA123';
+
+-- Grants for report_ods_read@% 
+GRANT USAGE ON *.* TO 'report_ods_read'@'%' IDENTIFIED BY PASSWORD '*73C7FF47412BFE237D90C1AE6B394356E6B9FD52';
+GRANT SELECT ON `report_ods`.* TO 'report_ods_read'@'%';
+
+-- Grants for shit@% 
+GRANT SELECT ON *.* TO 'shit'@'%' IDENTIFIED BY PASSWORD '*48B2633E53F8F5D4441B40EA0F8A0BAB4FF169DB';
+GRANT SELECT ON `ods_product`.* TO 'shit'@'%';
+
+-- Grants for tc_read@% 
+GRANT USAGE ON *.* TO 'tc_read'@'%' IDENTIFIED BY PASSWORD '*FF7C03D6715CC5FE6F86A4DC783B9BE73148B255';
+GRANT SELECT ON `data_base_tmp_tc`.* TO 'tc_read'@'%';
+
+-- Grants for vpbigdata@% 
+GRANT USAGE ON *.* TO 'vpbigdata'@'%' IDENTIFIED BY PASSWORD '*1F04C30C6B27FF455AE01E6120937399A04EE437';
+GRANT SELECT ON `data_base_cdn`.`cdn_url_cpcode_akamai` TO 'vpbigdata'@'%';
+GRANT SELECT ON `data_base_cdn`.`cdn_url_cpcode_txnetworks` TO 'vpbigdata'@'%';
+GRANT SELECT ON `data_base_cdn`.`cdn_url_cpcode_aliyun` TO 'vpbigdata'@'%';
+
+-- Grants for wangyl@% 
+GRANT USAGE ON *.* TO 'wangyl'@'%' IDENTIFIED BY PASSWORD '*85EC6D956694E8B5434FE92731687A80870B474F';
+GRANT SELECT ON `report_ods`.* TO 'wangyl'@'%';
+GRANT SELECT ON `report_dm`.`dim_cbs_product` TO 'wangyl'@'%';
+
+-- Grants for weiqing@% 
+GRANT SELECT ON *.* TO 'weiqing'@'%' IDENTIFIED BY PASSWORD '*56FB8ACDDC5A06693644CFA802B5382D68236291';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_ods_finance`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_edm`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_app_ga`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_app_ads`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_wq`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_tmp`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE, CREATE ROUTINE, ALTER ROUTINE ON `report_ods`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_dm`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `report_ls`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_base_risk`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_base_chatbot`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_cart`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_saleforce`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_tab_wq`.* TO 'weiqing'@'%';
+GRANT SELECT ON `data_base_import`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_cbs_view`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_ga`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_user`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_cdn`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_ipo`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_tmp_tc`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, EXECUTE ON `data_base_ads`.* TO 'weiqing'@'%';
+GRANT SELECT ON `ods_admin`.* TO 'weiqing'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON `data_base_import`.`dim_cbs_product` TO 'weiqing'@'%';
+
+-- Grants for wudy@% 
+GRANT SELECT ON *.* TO 'wudy'@'%' IDENTIFIED BY PASSWORD '*1C60474EECE7B810315D60A137D62DF14EEDCEC4';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_ods`.* TO 'wudy'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_edm`.* TO 'wudy'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_ls`.* TO 'wudy'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_app_ga`.* TO 'wudy'@'%';
+GRANT ALL PRIVILEGES ON `report_ga`.* TO 'wudy'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `report_dm`.* TO 'wudy'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_base_cdn`.* TO 'wudy'@'%';
+GRANT ALL PRIVILEGES ON `data_analysis`.* TO 'wudy'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_wdy`.* TO 'wudy'@'%';
+GRANT ALL PRIVILEGES ON `ods_web_ga`.* TO 'wudy'@'%';
+GRANT EXECUTE ON FUNCTION `data_base_cdn`.`extractnumber` TO 'wudy'@'%';
+
+-- Grants for zhaop@% 
+GRANT SELECT ON *.* TO 'zhaop'@'%' IDENTIFIED BY PASSWORD '*99298AA80A0CC82875E343E0A844CF8A2D7026A1';
+GRANT SELECT ON `ods_product`.* TO 'zhaop'@'%';
+
+-- Grants for USER@rep_166@10.10.18.166 
+GRANT REPLICATION SLAVE ON *.* TO 'USER@rep_166'@'10.10.18.166' IDENTIFIED BY PASSWORD '*411FB7C684746CD4864F5CA2551BA059D965B56A';
+
+-- Grants for ods_dev@10.10.19.62 
+GRANT ALL PRIVILEGES ON *.* TO 'ods_dev'@'10.10.19.62' IDENTIFIED BY PASSWORD '*5DD9DDE7DE635C7777E29B1F665173FEAFEF2B3E';
+
+-- Grants for guodw@10.11.5.141 
+GRANT SELECT ON *.* TO 'guodw'@'10.11.5.141' IDENTIFIED BY PASSWORD '*BB3DD49DD3DCB7300235E4EFB73DD88A3DE17DA7';
+GRANT SELECT ON `report_ls`.* TO 'guodw'@'10.11.5.141';
+GRANT SELECT ON `report_dm`.* TO 'guodw'@'10.11.5.141';
+
+-- Grants for 19033237@10.11.5.195 
+GRANT USAGE ON *.* TO '19033237'@'10.11.5.195' IDENTIFIED BY PASSWORD '*6ECC2479725A9A5C2650FE0B2FFA20D85C3F1340';
+GRANT SELECT ON `report_dm`.* TO '19033237'@'10.11.5.195';
+
+-- Grants for 10040855@10.12.11.21 
+GRANT USAGE ON *.* TO '10040855'@'10.12.11.21' IDENTIFIED BY PASSWORD '*CDB4FC86634BAD5893E93C92B61EADD603DD76B7';
+GRANT SELECT ON `report_dm`.* TO '10040855'@'10.12.11.21';
+
+-- Grants for guodw@10.12.151.151 
+GRANT SELECT ON *.* TO 'guodw'@'10.12.151.151' IDENTIFIED BY PASSWORD '*BB3DD49DD3DCB7300235E4EFB73DD88A3DE17DA7';
+GRANT SELECT ON `report_dm`.* TO 'guodw'@'10.12.151.151';
+GRANT SELECT ON `report_ls`.* TO 'guodw'@'10.12.151.151';
+
+-- Grants for ods_dev@10.13.0.82 
+GRANT USAGE ON *.* TO 'ods_dev'@'10.13.0.82' IDENTIFIED BY PASSWORD '*5DD9DDE7DE635C7777E29B1F665173FEAFEF2B3E';
+GRANT ALL PRIVILEGES ON `report_dm`.* TO 'ods_dev'@'10.13.0.82';
+
+-- Grants for lizl@10.6.0.111 
+GRANT USAGE ON *.* TO 'lizl'@'10.6.0.111' IDENTIFIED BY PASSWORD '*0CFEFFCE8D5A05B10934E671D9225E42BC7AFEBC';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON `data_base_cart`.* TO 'lizl'@'10.6.0.111';
+
+-- Grants for ods_rp_dev@127.0.0.1 
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE ON *.* TO 'ods_rp_dev'@'127.0.0.1' IDENTIFIED BY PASSWORD '*B1CB1B7D449847C49DA7AF8CDC1B3876910CB14F';
+
+-- Grants for ods_rp_dev@192.168.9.87 
+GRANT ALL PRIVILEGES ON *.* TO 'ods_rp_dev'@'192.168.9.87' IDENTIFIED BY PASSWORD '*B1CB1B7D449847C49DA7AF8CDC1B3876910CB14F';
