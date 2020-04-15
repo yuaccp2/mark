@@ -3,6 +3,8 @@
 2.vim shell 切换
 vim下 ：shell
 shell下 exit
+3.vim 更换文件格式
+set ff=unix
 
 #查看所有用户的定时任务
 cat /etc/passwd | cut -f 1 -d : |xargs -I {} crontab -l -u {}
@@ -58,7 +60,7 @@ cp php.ini-development /usr/local/php-5.3.28/lib/
 #php redis 扩展
 wget http://pecl.php.net/get/redis-3.1.0.tgz
 tar -zxvf redis-3.1.0.tgz
-cd redis-3.1.0
+cd redisis-3.1.0
 /usr/local/php-5.3.28/bin/phpize 
 ./configure --with-php-config=/usr/local/php-5.3.28/bin/php-config
 make && make install
@@ -91,4 +93,20 @@ echo test | mailx -v -s "test"  test@126.com
 ##添加软件链接
 ln -s 源文件 目标文件
 支持目录 需用全路径 
-3122949309
+
+##输出第几行到结束
+sed -n '100350,$p' /data/mysql_3306/us987-slow.log > /home/mysql/slow_191021.log
+sed -n '96891,97125p' /data/mysql_3306/us987-slow.log > /home/mysql/slow_191015.log
+
+###VSftpd 安装配置
+sudo yum -y install vsftpd
+
+sudo useradd ftpuser -d /home/ftpuser/ -s /sbin/nologin
+sudo passwd ftpuser
+sudo service vsftpd restart
+
+### 更改系统时区
+timedatectl set-timezone UTC #设置
+
+##FTP账号添加 
+useradd -d /home/linsxf/ -g ftp -s /sbin/nologin linsxf
