@@ -1,3 +1,6 @@
+#centOS 版本
+cat /etc/redhat-release
+
 1.vim 提高权限保存文件
 :w !sudo tee %
 2.vim shell 切换
@@ -5,6 +8,22 @@ vim下 ：shell
 shell下 exit
 3.vim 更换文件格式
 set ff=unix
+
+######查看文件数量
+ls -l 20201127 | grep '^-' | wc -l
+######查看CPU核数
+# 总核数 = 物理CPU个数 X 每颗物理CPU的核数 
+# 总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+
+# 查看物理CPU个数
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+
+# 查看每个物理CPU中core的个数(即核数)
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+# 查看逻辑CPU的个数
+cat /proc/cpuinfo| grep "processor"| wc -l
+
 
 #查看所有用户的定时任务
 cat /etc/passwd | cut -f 1 -d : |xargs -I {} crontab -l -u {}
@@ -35,6 +54,12 @@ ls -lrt   时间升序
 find /文件路径 -name \*.log -ctime +2 -exec rm {} \;
 
 -exec 表示需要执行的命令，{}代表find找到的内容，"\;"是固定写法表示结束-exec
+
+find /data/yh_bi/Yonghong/log/* -type f -name 'bi.log*'  -ctime +10  -delete
+##删除文件
+find /data/cbs_logs/ -type f -name '*.log' -ctime +250 -exec -delete
+##删除目录
+find /data/cbs_logs/* -maxdepth 0  -type d -ctime +1 -exec rm -rf {} \;    
 #合并内容 
 find . -name "hprose_access_*0909.log" | while read filename;do cat $filename >> hprose_merge_access_20180909.log;done;
 
@@ -51,6 +76,8 @@ tar -jxvf ×××.tar.bz2
 
 #打包压缩zpi
 tar -zcvf xxx.tar.gx /xxx
+#打包解压gz 到指定目录
+tar -zxvf xxx.tar.gx -C /xxx
 #php 安装
 
 ./configure --prefix=/usr/local/php-5.3.28 --enable-mbstring --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd
@@ -110,3 +137,30 @@ timedatectl set-timezone UTC #设置
 
 ##FTP账号添加 
 useradd -d /home/linsxf/ -g ftp -s /sbin/nologin linsxf
+
+###修改密码
+password apache
+
+###北京时区日期
+lasthour=`TZ='Asia/Shanghai' date -d '1 hour ago' +%Y%m%d%H`
+
+######批量快速注释及撤销注释：
+先使用crontab -e进行对crontab的编辑操作
+$ crontab -e
+然后使用vi的如下编辑命令
+:%s/^/#/
+就可以将定时执行的任务前面都加上一个'#',进行注释掉。
+同样等，某些操作完成后，也是，先进行对crontab的编辑
+$ crontab -e
+使用如下编辑命令 
+:%s/^#//
+就可以讲上次所有注释的定时任务，全部撤销。
+
+###查看出口IP
+curl ipinfo.io
+
+###crontab 带日期不执行脚本正确写法
+/bin/sh xxx.sh  >>/tmp/xx_`date +"\%Y\%m\%d"`.log
+
+###修改用户组
+usermod -g group user

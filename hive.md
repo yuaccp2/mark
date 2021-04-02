@@ -25,3 +25,5 @@ InputFormat:	org.apache.hadoop.hive.ql.io.orc.OrcInputFormat
 OutputFormat:	org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat
 
 https://www.cnblogs.com/ITtangtang/p/7677912.html
+
+

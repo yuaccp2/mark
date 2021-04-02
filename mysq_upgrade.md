@@ -10,13 +10,16 @@ server-id = 1
 service nfs start
 mkdir /mnt_81_data2
 mount 10.13.0.81:/data/mysqlbak /mnt_81_data2
+mount 10.13.0.81:/data/www/scriptFlow /mnt_81_sql_data
 
 #下载安装 XtraBackup
 https://www.percona.com/downloads/XtraBackup/LATEST/
 #全量备份
-innobackupex --defaults-file=/etc/my.cnf --user=root --password='' /mnt_81_data/
+innobackupex --defaults-file=/etc/my.cnf --user=root --password='root!@#' /mnt_81_data/
 
-innobackupex --defaults-file=/etc/my.cnf --no-lock --user 'root' --password '' --stream=tar ./ | ssh root@192.1168.2.100 \ "cat - > /home/backup/database/`date +%Y%m%d`/`date +%H-%M`-backup.tar"
+nohup innobackupex --defaults-file=/etc/my.cnf --user=root --password='root!@#' /mnt/ >> /opt/logs/innobackupex_20201226.log &
+
+innobackupex --defaults-file=/etc/my.cnf --no-lock --user 'root' --password 'root!@#' --stream=tar ./ | ssh root@192.1168.2.100 \ "cat - > /home/backup/database/`date +%Y%m%d`/`date +%H-%M`-backup.tar"
 
 #全量恢复
 
